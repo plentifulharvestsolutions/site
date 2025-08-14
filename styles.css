@@ -1,0 +1,331 @@
+:root{
+  --bg:#f5efe2;
+  --ink:#2b2b2b;
+  --ink-soft:#4a4a4a;
+  --accent:#0f3b31;
+  --accent-2:#215c4f;
+  --brand:#0f3b31;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.5;
+}
+
+/* Match background color to logo background */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5ebd8; /* adjust this hex to match logo */
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+
+/* Keep logo centered and not stretched */
+.brand img {
+  height: auto;
+  max-height: 300px; /* keeps proportion */
+  width: auto;
+  display: block;
+}
+
+/* Nav with same background color */
+.nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background-color: #f5ebd8; /* same as header */
+  padding: 0.75rem 1rem;
+}
+
+
+.nav-link {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  text-decoration: none;
+  color: var(--accent);
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: #e8f0ec;
+}
+
+/* Mobile menu toggle for narrow screens */
+.nav-toggle {
+  display: none;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 880px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+
+/* Hero */
+.hero{
+  text-align:center; padding:4rem 1rem 2rem;
+}
+.hero h1{font-size:2.25rem; margin:.5rem 0}
+.hero p{max-width:60ch; margin:.5rem auto}
+.verse{margin-top:.75rem; color:var(--accent-2)}
+
+.btn{
+  display:inline-block; padding:.7rem 1.1rem; margin-top:1rem;
+  background:var(--accent); color:#fff; text-decoration:none; border-radius:.6rem;
+  border:2px solid var(--accent);
+}
+.btn:hover{opacity:.9}
+.btn-outline{
+  background:transparent; color:var(--accent);
+}
+
+.hero-image {
+  background: url("harvest-bg.jpg") no-repeat center center / cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  opacity: 0; /* start invisible */
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(15, 59, 49, 0.45);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  opacity: 0; /* start invisible */
+  transform: translateY(20px); /* slight slide up */
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Fade-in background */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade-in text with upward motion */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Sections */
+.features{
+  display:grid; gap:1rem; grid-template-columns:repeat(3,1fr);
+  padding:2rem 1rem; max-width:1100px; margin:0 auto;
+}
+.features article{background:#fff; border:1px solid #e7e1d0; border-radius:12px; padding:1rem}
+.features h2{margin:.25rem 0}
+
+.cta{
+  text-align:center; padding:2.5rem 1rem; max-width:900px; margin:0 auto 2rem;
+}
+
+/* Layout helpers */
+.narrow{max-width:900px; margin:2rem auto; padding:0 1rem}
+.cards{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:#fff; border:1px solid #e7e1d0; border-radius:14px; padding:1rem}
+.price{font-weight:bold; color:var(--accent)}
+
+.contact-list{list-style:none; padding:0}
+.contact-list li{margin:.25rem 0}
+
+/* ========= Enhanced Contact Form Styles ========= */
+
+/* Brand palette (reaffirm) */
+:root{
+  --cream:#f5ebd8;
+  --ink:#2b2b2b;
+  --ink-soft:#4a4a4a;
+  --brand:#0f3b31;        /* deep green */
+  --brand-2:#215c4f;      /* lighter green */
+  --wheat:#d38b2f;        /* accent (optional) */
+  --card:#fff;            /* form card bg */
+  --line:#e7e1d0;         /* soft border */
+}
+
+/* Form card container */
+#contact-form{
+  max-width: 760px;
+  margin: 1.5rem auto 2.5rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15,59,49,.08);
+}
+
+/* Fieldsets & legends */
+#contact-form fieldset{
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #fffdf9;
+}
+#contact-form legend{
+  font-weight: 700;
+  color: var(--brand);
+  padding: 0 .35rem;
+}
+
+/* Labels stack nicely */
+#contact-form label{
+  display: grid;
+  gap: .4rem;
+  margin: .6rem 0;
+  font-weight: 500;
+}
+
+/* Inputs */
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form input[type="url"],
+#contact-form input[type="file"],
+#contact-form select,
+#contact-form textarea{
+  width: 100%;
+  padding: .7rem .85rem;
+  border: 1px solid #d9d0bd;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  transition: box-shadow .15s ease, border-color .15s ease, background-color .15s ease;
+}
+
+/* Focus ring */
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus{
+  outline: 0;
+  border-color: var(--brand-2);
+  box-shadow: 0 0 0 3px rgba(33,92,79,.18);
+  background: #fffefe;
+}
+
+/* Placeholder color */
+#contact-form ::placeholder{ color:#9a8f7a; }
+
+/* Two-column layout on wider screens for dense groups */
+@media (min-width: 720px){
+  /* contact info + organization sections become two columns */
+  #contact-form fieldset:nth-of-type(1),
+  #contact-form fieldset:nth-of-type(2){
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 1rem 1.25rem;
+  }
+  #contact-form fieldset:nth-of-type(1) legend,
+  #contact-form fieldset:nth-of-type(2) legend{
+    grid-column: 1 / -1;
+  }
+}
+
+/* Checkboxes line up nicely */
+#contact-form .checkbox{
+  display:flex; align-items:center; gap:.5rem; margin:.5rem 0;
+  font-weight: 500;
+}
+#contact-form .checkbox input{ width:auto; }
+
+/* Submit button */
+#contact-form .btn{
+  display: inline-block;
+  min-width: 9rem;
+  padding: .75rem 1.1rem;
+  border-radius: 10px;
+  border: 2px solid var(--brand);
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .2px;
+  transition: transform .06s ease, opacity .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+#contact-form .btn:hover{
+  opacity:.95;
+  box-shadow: 0 6px 18px rgba(15,59,49,.18);
+}
+#contact-form .btn:active{ transform: translateY(1px); }
+
+/* Status message */
+#form-status{
+  margin-top:.6rem;
+  color: var(--ink-soft);
+  font-size: .98rem;
+}
+
+/* Native validation cues (subtle) */
+#contact-form :required:invalid{
+  border-color: #e1b7b7;
+}
+#contact-form :required:invalid:focus{
+  box-shadow: 0 0 0 3px rgba(210, 66, 66, .18);
+}
+
+/* Small polish for selects */
+#contact-form select{
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--brand) 50%),
+    linear-gradient(135deg, var(--brand) 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px),
+    calc(100% - 2.25rem) 0;
+  background-size: 6px 6px, 6px 6px, 1px 100%;
+  background-repeat: no-repeat;
+  padding-right: 2.25rem;
+}
+
+/* Make the page chrome match your banner cream */
+.site-header, .nav{ background-color: var(--cream); }
+
+
+/* For Contact Us Form */
+fieldset{border:1px solid #e7e1d0; border-radius:12px; padding:1rem; margin:1rem 0; background:#fff}
+legend{font-weight:700; padding:0 .35rem}
+.checkbox{display:flex; align-items:center; gap:.5rem; margin:.4rem 0}

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — PlentifulHarvest Solutions</title>
+  <meta name="description" content="Book a WEB ACH audit or request a quote for your ministry." />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="preload" as="image" href="logo-banner.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="logo-banner.png" alt="PlentifulHarvest Solutions logo" />
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <nav class="nav" id="site-nav">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link active" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="narrow">
+    <section class="hero">
+      <h1>Contact</h1>
+      <p>Ready to schedule your WEB ACH audit or get pricing for your ministry?</p>
+    </section>
+
+    <ul class="contact-list">
+      <li>Please fill out the form below but if you prefer to email: <a href="mailto:max.raybon@plentifulharvestsolutions.com">Click Here!</a></li>
+    </ul>
+
+    <form id="contact-form" action="https://formspree.io/f/mzzvwvkr" method="POST" novalidate>
+  <!-- CONTACT INFO -->
+  <fieldset>
+    <legend>Contact information</legend>
+    <label>Full name
+      <input type="text" name="name" autocomplete="name" required>
+    </label>
+    <label>Work email
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+    <label>Phone
+      <input type="tel" name="phone" inputmode="tel" placeholder="(555) 555-5555">
+    </label>
+    <label>Role / Title
+      <input type="text" name="role" placeholder="Administrator, Treasurer, Pastor, etc.">
+    </label>
+  </fieldset>
+
+  <!-- ORG INFO -->
+  <fieldset>
+    <legend>Organization</legend>
+    <label>Organization name
+      <input type="text" name="organization" required>
+    </label>
+    <label>Website
+      <input type="url" name="website" placeholder="https://example.org">
+    </label>
+    <label>Organization type
+      <select name="org_type">
+        <option value="Church">Church</option>
+        <option value="Christian School">Christian School</option>
+        <option value="Nonprofit Ministry">Nonprofit Ministry</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+    <label>Size
+      <select name="org_size">
+        <option value="Under 100">Under 100</option>
+        <option value="100–500">100–500</option>
+        <option value="500–1500">500–1500</option>
+        <option value="1500+">1500+</option>
+      </select>
+    </label>
+    <label>State/Region
+      <input type="text" name="region" placeholder="e.g., FL / Southeast">
+    </label>
+  </fieldset>
+
+  <!-- SERVICE NEEDS -->
+  <fieldset>
+    <legend>Service needs</legend>
+    <label>What do you need help with?
+      <select name="service" required>
+        <option value="WEB ACH Annual Audit">WEB ACH Annual Audit</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+
+    <label>Needed Timeframe?
+      <select name="timeframe">
+        <option value="ASAP (2 weeks)">ASAP (2 weeks)</option>
+        <option value="This month">This month</option>
+        <option value="Next 60–90 days">Next 60–90 days</option>
+        <option value="Planning / Exploring">Planning / Exploring</option>
+      </select>
+    </label>
+
+    <label>Estimated annual WEB transactions
+      <select name="web_txn_volume">
+        <option value="Unknown">Unknown</option>
+        <option value="Under 1,000">Under 1,000</option>
+        <option value="1,000–10,000">1,000–10,000</option>
+        <option value="10,000+">10,000+</option>
+      </select>
+    </label>
+
+    <label>Preferred contact method
+      <select name="preferred_contact">
+        <option value="Email">Email</option>
+        <option value="Phone">Phone</option>
+        <option value="Either">Either</option>
+      </select>
+    </label>
+
+    <label>Best time to reach you
+      <select name="best_time">
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
+      </select>
+    </label>
+  </fieldset>
+
+  <!-- MESSAGE -->
+  <fieldset>
+    <legend>Message</legend>
+    <label>Tell us a little about your current setup
+      <textarea name="message" rows="6" placeholder="Payment provider? Any deadlines? Anything we should know?" required></textarea>
+    </label>
+  </fieldset>
+
+  <!-- CONSENT -->
+  <label class="checkbox">
+    <input type="checkbox" name="consent" value="Yes" required>
+    I consent to being contacted about this inquiry.
+  </label>
+  
+
+  <!-- Hidden helpers -->
+  <input type="hidden" name="_subject" value="New Intake: PlentifulHarvest Solutions">
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+  <input type="hidden" name="page_url" value="">
+  <input type="hidden" name="_next" value="https://your-user.github.io/plentifulharvest-site/thank-you.html">
+
+  <button class="btn" type="submit">Send</button>
+  <p id="form-status" class="muted" role="status" aria-live="polite" style="margin-top:.5rem;"></p>
+</form>
+
